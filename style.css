@@ -1,0 +1,342 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(39, 30, 49);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    width: 328px;
+    height: 555px;
+    transition: all 0.2s ease-in-out;
+}
+
+header{
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    margin: 10px 8px;
+    user-select: none;
+}
+
+header img{
+    width: 22px;
+    margin-right: 8px;
+    margin-left: 4px;
+}
+
+#theme{
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    cursor: pointer;
+    display: flex;
+    padding: 3px 5px;
+    width: 47px;
+    user-select: none;
+    position: absolute;
+    top: 9px;
+    right: 12px;
+    transition: all 0.2s ease-in-out;
+}
+
+#theme span{
+    display: inline-block;
+    background-color: turquoise;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    transition: all 0.25s ease-in-out;
+}
+
+.toggleTheme{
+    transform: translateX(20px);
+}
+
+#language p{
+    background-color: rgb(39, 30, 49);
+    font-weight: bold;
+    font-size: 1.28em;
+    letter-spacing: 0.5px;
+    padding: 0 5px;
+    position: absolute;
+    top: 59px;
+    left: 18px;
+    transition: all 0.2s ease-in-out;
+}
+
+#language ul{
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    padding: 22px 6px 45px;
+    margin: 35px 8px 0;
+    list-style: none;
+}
+
+.languages{
+    align-items: center;
+    border: 1px solid transparent;
+    background-color: rgba(54, 195, 181, 0.15);
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    user-select: none;
+    padding: 6px;
+    transition: all 0.25s ease-in-out;
+}
+
+.languages:hover{
+    box-shadow: 0 0 4px 1px turquoise;
+    transform: scale(1.1);
+}
+
+.languages img{
+    height: 28px;
+    width: 28px;
+}
+
+.activeLanguage{
+    box-shadow: 0 0 4px 1px turquoise;
+    transform: scale(1.1);
+}
+
+#language div{
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    column-gap: 5px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5px;
+    user-select: none;
+    position: absolute;
+    top: 148px;
+    left: 26px;
+}
+
+#language div label, input[type="checkbox"]{
+    cursor: pointer;
+}
+
+#runCode{
+    border: none;
+    background-color: rgb(195, 57, 250);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 11px 0;
+    width: 60%;
+    margin: 28px auto 0;
+    transition: all 0.25s ease-in-out;
+}
+
+#runCode:hover{
+    transform: scale(1.04);
+}
+
+#runCode:active{
+    transform: scale(1);
+}
+
+#orOption{
+    color: rgb(150, 150, 150);
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    margin: 22px 0;
+    text-align: center;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0;}
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1;}
+    to { opacity: 0; }
+}
+
+#popupWindow{
+    align-items: center;
+    background-color: rgba(30, 30, 30, 0.2);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 88%;
+    position: absolute;
+    top: 41px;
+    display: none;
+    z-index: 10;
+}
+
+.popup{
+    background-color: rgb(58, 43, 76);
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.5px;
+    user-select: none;
+    padding: 40px 0;
+}
+
+#closePopup{
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 12px;
+}
+
+#underExecution, #selectLanguage{
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    row-gap: 14px;
+    width: 70%;
+    margin-bottom: 15px;
+}
+
+#takeInput{
+    align-items: flex-start;
+    padding: 20px 5%;
+    width: 80%;
+}
+
+#takeInput h1{
+    color: turquoise;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+#takeInput textarea{
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(41, 41, 41, 0.2);
+    border-radius: 6px;
+    color: white;
+    font-family: monospace;
+    line-height: 17px;
+    outline: none;
+    padding: 8px 10px;
+    resize: none;
+    height: 40px;
+    width: 100%;
+    margin: 14px 0;
+}
+
+#takeInput button{
+    margin: 0 auto;
+}
+
+#output{
+    align-items: flex-start;
+    padding: 25px 18px;
+    width: 90%;
+    max-height: 85%;
+}
+
+#output h1{
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+#output h3{
+    margin: 0 0 10px;
+    font-size: 1em;
+}
+
+#output p{
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(41, 41, 41, 0.2);
+    border-radius: 6px;
+    line-height: 16px;
+    width: 100%;
+    overflow-y: auto;
+    padding: 10px 8px;
+}
+
+
+#enterCode textarea{
+    border: 1px solid gray;
+    background-color: rgba(41, 41, 41, 0.2);
+    color: white;
+    border-radius: 6px;
+    font-family: monospace;
+    line-height: 17px;
+    outline: none;
+    padding: 10px;
+    resize: none;
+    height: 180px;
+    width: 304px;
+    margin-left: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+#enterCode div{
+    text-align: right;
+    margin: 7px 15px 0 0;
+}
+
+.codeButton{
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(195, 57, 250);
+    cursor: pointer;
+    color: white;
+    padding: 5px 15px;
+    margin: 0 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+.codeButton:hover{
+    transform: scale(1.05);
+}
+
+.codeButton:active{
+    transform: scale(1);
+}
+
+footer{
+    background-color: rgba(255, 255, 255, 0.08);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    font-family: monospace;
+    font-size: 1.1em;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    text-align: center;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+footer a{
+    color: rgb(55, 224, 224);
+    text-decoration: none;
+}
+footer a:hover{
+    text-shadow: 0 0 10px cyan;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgb(87, 87, 87);
+}
