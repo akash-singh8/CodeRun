@@ -1,0 +1,24 @@
+{   
+    "manifest_version": 3,
+    "author": "Akash",
+    "name": "CodeRun",
+    "description": "Code execution made easy - run Python, C, C++, Java, and more, all in one place. Save time and streamline your coding workflow with just one click!",
+    "version": "1.0.0",
+
+    "action": {
+        "default_icon": {
+          "16": "logo.png",
+          "32": "logo.png",
+          "48": "logo.png",
+          "128": "logo.png"
+        },
+        "default_title": "CodeRun",
+        "default_popup": "popup.html"
+     },
+
+     "icons": {
+        "128": "logo.png"
+    },
+
+    "permissions": ["activeTab"]
+}
