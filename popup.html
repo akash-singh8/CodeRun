@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Run</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="popup.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <img src="logo.png" alt="logo" />
+      <p>CODERUN</p>
+    </header>
+
+    <div id="theme">
+      <span></span>
+    </div>
+
+    <section>
+      <div id="language">
+        <p>Select language</p>
+        <ul>
+          <li class="languages" title="Python">
+            <img src="images/python.png" alt="python" />
+          </li>
+          <li class="languages" title="C or C++">
+            <img src="images/cpp.png" alt="C++" />
+          </li>
+          <li class="languages" title="GoLang">
+            <img src="images/goLang.png" alt="GO" />
+          </li>
+          <li class="languages" title="Java">
+            <img src="images/java.png" alt="java" />
+          </li>
+          <li class="languages" title="C-Sharp">
+            <img src="images/cSharp.png" alt="C#" />
+          </li>
+        </ul>
+        <div>
+          <input type="checkbox" id="checkInput" />
+          <label for="checkInput">Code requires an input</label>
+        </div>
+      </div>
+      <button id="runCode">Run Selected Code</button>
+      <div id="orOption">---- OR ----</div>
+
+      <div id="popupWindow">
+        <div id="closePopup">
+          <img src="images/close.png" alt="close" width="24px" />
+        </div>
+
+        <div id="selectLanguage" class="popup">
+          <img src="images/choose.png" alt="choose" width="48px" />
+          <p>Please Select Language</p>
+        </div>
+
+        <form id="takeInput" class="popup">
+          <h1>Input</h1>
+          <p>For multiple inputs, type in all your inputs line by line.</p>
+          <textarea
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="Enter Inputs..."
+          ></textarea>
+          <button type="submit" class="codeButton">Execute</button>
+        </form>
+
+        <div id="underExecution" class="popup">
+          <img src="images/infinity.gif" alt="loading" width="48px" />
+          <p>Executing</p>
+        </div>
+
+        <div id="output" class="popup">
+          <h1>Output :</h1>
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+
+      <form id="enterCode">
+        <textarea
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="Enter your code here..."
+        ></textarea>
+        <div>
+          <button type="reset" class="codeButton">Clear</button>
+          <button type="submit" class="codeButton">Execute</button>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      Developed with
+      <span style="text-shadow: 0 0 10px rgb(247, 0, 103)">❤️</span> by
+      <strong
+        ><a href="https://www.linkedin.com/in/akash-singh8/" target="_blank"
+          >~Akash</a
+        ></strong
+      >
+    </footer>
+  </body>
+</html>
