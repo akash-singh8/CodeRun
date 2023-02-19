@@ -129,13 +129,14 @@ header img{
 
 #runCode{
     border: none;
-    background-color: rgb(195, 57, 250);
+    background-color: rgb(63, 213, 198);
     border-radius: 8px;
     color: white;
     cursor: pointer;
     display: block;
     font-weight: bold;
     font-size: 1.1em;
+    letter-spacing: 0.5px;
     padding: 11px 0;
     width: 60%;
     margin: 28px auto 0;
@@ -293,7 +294,7 @@ header img{
 .codeButton{
     border: none;
     border-radius: 4px;
-    background-color: rgb(195, 57, 250);
+    background-color: rgb(63, 213, 198);
     cursor: pointer;
     color: white;
     padding: 5px 15px;

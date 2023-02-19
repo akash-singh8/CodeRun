@@ -94,7 +94,7 @@ function executeCode(code, lang) {
   const takeInput = document.getElementById("takeInput");
   const executing = document.getElementById("underExecution");
   const output = document.getElementById("output");
-  const codeAvailable = code.length;
+  const codeAvailable = code?.length;
 
   if (!lang || !codeAvailable) {
     // display invalid popup
@@ -168,4 +168,22 @@ document.getElementById("closePopup").addEventListener("click", () => {
   setTimeout(() => {
     popup.style.display = "none";
   }, 200);
+});
+
+// get selected text from content script and executing that code
+document.getElementById("runCode").addEventListener("click", function () {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.sendMessage(
+      tabs[0].id,
+      { type: "getSelectedText" },
+      function (response) {
+        console.log("Selected Text :", response);
+        if (response)
+          document.querySelector("#enterCode textarea").value = response;
+        const lang =
+          language_Ext[activeLang?.querySelector("img").getAttribute("alt")];
+        executeCode(response, lang);
+      }
+    );
+  });
 });
