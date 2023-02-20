@@ -5,6 +5,9 @@ theme.addEventListener("click", () => {
   const body = document.querySelector("body");
   const langHead = document.querySelector("#language p");
   const codeInp = document.querySelector("#enterCode textarea");
+  const popups = document.querySelectorAll(".popup");
+  const popupInp = document.querySelector("#takeInput textarea");
+  const output = document.querySelector("#output p");
   btn.classList.toggle("toggleTheme");
   if (btn.classList.contains("toggleTheme")) {
     theme.style.backgroundColor = "rgb(165, 165, 165)";
@@ -13,6 +16,14 @@ theme.addEventListener("click", () => {
     codeInp.style.backgroundColor = "white";
     body.style.color = "black";
     codeInp.style.color = "black";
+
+    popupInp.style.backgroundColor = "white";
+    popupInp.style.color = "black";
+    output.style.backgroundColor = "white";
+    popups.forEach((item) => {
+      item.style.backgroundColor = "#eeeeee";
+      item.style.color = "black";
+    });
   } else {
     theme.style.backgroundColor = "rgba(255, 255, 255, 0.17)";
     body.style.backgroundColor = "rgb(39, 30, 49)";
@@ -20,6 +31,14 @@ theme.addEventListener("click", () => {
     codeInp.style.backgroundColor = "rgba(41, 41, 41, 0.2)";
     body.style.color = "white";
     codeInp.style.color = "white";
+
+    popupInp.style.backgroundColor = "rgba(41, 41, 41, 0.2)";
+    popupInp.style.color = "white";
+    output.style.backgroundColor = "rgba(41, 41, 41, 0.2)";
+    popups.forEach((item) => {
+      item.style.backgroundColor = "rgb(58, 43, 76)";
+      item.style.color = "white";
+    });
   }
 });
 
@@ -69,7 +88,7 @@ function executionOutput(code, lang, input) {
       const outputText = output.querySelector("p");
       if (data.status === 200 && data.output.length) {
         outputStatus.innerText = "Success (200)";
-        outputStatus.style.color = "#47ff8d";
+        outputStatus.style.color = "#04e52c";
         outputText.innerText = data.output;
       } else {
         outputStatus.innerText = `Error (${data.status})`;
